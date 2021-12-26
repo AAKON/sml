@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Broadcast;
-
+use App\Models\User;
+use Rainwater\Active\Active;
 /*
 |--------------------------------------------------------------------------
 | Broadcast Channels
@@ -12,11 +13,21 @@ use Illuminate\Support\Facades\Broadcast;
 | used to check if an authenticated user can listen to the channel.
 |
 */
+/**
+ * @description Show the home page of the site
+ */
 
 Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
 });
+/**
+ * @description Show the home page of the site
+ */
 
 Broadcast::channel('chat', function ($user) {
-    return $user;
+    // $user = User::all();
+    // $users = Active::users()->get();
+    $users = $user;
+    return $users;
 });
+

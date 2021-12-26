@@ -12,11 +12,20 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+/**
+ * @description Show the home page of the site
+ */
 
 Route::get('/', function () {
     return view('welcome');
 });
+/**
+ * @description Show the home page of the site
+ */
 
 Auth::routes();
+/**
+ * @description Show the home page of the site
+ */
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

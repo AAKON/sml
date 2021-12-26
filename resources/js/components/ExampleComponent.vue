@@ -7,7 +7,7 @@
 
                     <div class="card-body">
                         I'm an example component.
-                    </div>
+                             </div>
                 </div>
             </div>
         </div>
@@ -18,18 +18,21 @@
     export default {
         mounted() {
         
-            Echo.join(`chat`).here((users) => {
-                console.log(users);
-            })
-            .joining((user) => {
-                console.log(user.name);
-            })
-            .leaving((user) => {
-                console.log(user.name);
-            })
-            .error((error) => {
-                console.error(error);
-            });
+           Echo.join('log-message')
+    .here((users) => {
+       console.log(users);
+    })
+    .joining((users) => {
+        console.log(users);
+    })
+    .leaving((users) => {
+        console.log(users);
+    })
+    .error((error) => {
+        console.log(error);
+    });
         }
+
+        
     }
 </script>
