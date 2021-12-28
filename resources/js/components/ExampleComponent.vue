@@ -18,21 +18,13 @@
     export default {
         mounted() {
         
-           Echo.join('log-message')
-    .here((users) => {
-       console.log(users);
-    })
-    .joining((users) => {
-        console.log(users);
-    })
-    .leaving((users) => {
-        console.log(users);
-    })
-    .error((error) => {
-        console.log(error);
-    });
+     Echo.channel(`chat`)
+.listen('.myevent', (e) => {
+    console.log(e);
+});
         }
 
         
     }
 </script>
+

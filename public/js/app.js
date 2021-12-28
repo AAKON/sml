@@ -5261,14 +5261,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
-    Echo.join('log-message').here(function (users) {
-      console.log(users);
-    }).joining(function (users) {
-      console.log(users);
-    }).leaving(function (users) {
-      console.log(users);
-    }).error(function (error) {
-      console.log(error);
+    Echo.channel("chat").listen('.myevent', function (e) {
+      console.log(e);
     });
   }
 });
